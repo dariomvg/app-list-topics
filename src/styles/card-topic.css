@@ -1,0 +1,59 @@
+.card-topic {
+    width: 100%;
+    padding: 10px;
+    background-color: #161b23;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title-card-topic {
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    transition: .5s;
+
+}
+.icon-card-topic {
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.title-card-topic:hover .icon-card-topic {
+    opacity: 1;
+    visibility: visible;
+
+}
+.details-card-topic {
+    font-size: 16px;
+    font-size: 18px;
+    color: #ddd;
+
+}
+
+.container-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.position-list {
+    color: #fff; 
+}
+span {
+    color: #fff; 
+}
+.count-comments  {
+    color: #ddd; 
+}
+
+.creator-card-topic {
+    color: #ddd; 
+}

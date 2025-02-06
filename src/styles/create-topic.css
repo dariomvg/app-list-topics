@@ -1,0 +1,54 @@
+.page-create-topic {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-create-topic {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    border: 1px solid #161b23;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.title-form-create {
+    text-align: center;
+    color: #fff;
+}
+
+.input-form-create {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+}   
+
+.input-form-create:focus {
+    border-color: #0087db;
+}
+.input-form-create::placeholder {
+    color: #ddd;
+}
+
+.button-form-create {
+    padding: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
