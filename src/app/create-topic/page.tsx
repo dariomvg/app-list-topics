@@ -25,8 +25,8 @@ export default function CreateTopic() {
         <h1 className="title-form-create">Agrega tu tema de debate</h1>
         <input
           type="text"
-          name="name"
-          value={formTopic.name}
+          name="title"
+          value={formTopic.title}
           onChange={handleChange}
           placeholder="Título de tu tema"
           className="input-form-create"

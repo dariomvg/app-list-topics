@@ -2,24 +2,20 @@
 import { ObjTopic, UseFindTopic } from "@/types/types";
 import { objTopic } from "@/utils/topic";
 import { useEffect, useState } from "react";
-import { useTopics } from "./useTopics";
+import { getTopic } from "@/libs/requests";
 
-export const useFindTopic = (name: string): UseFindTopic => {
+export const useFindTopic = (title: string): UseFindTopic => {
   const [currentTopic, setCurrentTopic] = useState<ObjTopic>(objTopic);
-  
-  const { topics } = useTopics();
 
   useEffect(() => {
-    if (name) {
-      const findCurrentTopic = () => {
-        const foundTopic = topics.find((topic) => topic.link === name);
-        if (foundTopic) {
-          setCurrentTopic(foundTopic);
-        }
+    if (title) {
+      const getCurrentTopic = async () => {
+        const topic = await getTopic(title);
+        if (topic) setCurrentTopic(topic[0]);
       };
-      findCurrentTopic();
+      getCurrentTopic();
     }
-  }, [name]);
+  }, [title]);
 
   return { currentTopic };
 };

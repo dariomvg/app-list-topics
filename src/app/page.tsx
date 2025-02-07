@@ -21,7 +21,7 @@ export default function Home() {
       </div>
       <section className="section-topics">
         <ul className="list-topics">
-          {topic.name ? (
+          {topic.title ? (
             <CardTopic topic={topic} />
           ) : (
             topics.length > 0 &&

@@ -18,7 +18,6 @@ export const CreateComment = ({idTopic}: {idTopic: number}) => {
 
   const submitCreate = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(comment);
     addNewComment(comment, idTopic); 
     setComment("");
     setCountCaracters(count);

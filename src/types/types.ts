@@ -9,7 +9,7 @@ export type ObjComment = {
 
 export type ObjTopic = {
   id: number;
-  name: string;
+  title: string;
   details: string;
   link: string;
   comments: ObjComment[];
@@ -24,7 +24,7 @@ export interface UseTopics {
   topic: ObjTopic;
   resetSearch: () => void;
   addNewComment: (comment: string, idTopic: number) => void;
-  removeComment: (id: number) => void;
+  removeComment: (idComment: number, idTopic: number) => void;
 }
 
 export interface UseFindTopic {

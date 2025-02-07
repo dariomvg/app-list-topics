@@ -3,12 +3,12 @@ import iconLink from "@/assets/icon-link.svg";
 import { ObjTopic } from "@/types/types";
 
 export const CardTopic = ({ topic }: { topic: ObjTopic }) => {
-  const {name, link, details, range, comments, creator} = topic; 
+  const {title, link, details, range, comments, creator} = topic; 
 
   return (
     <li className="card-topic">
       <a href={`topic/${link}`} className="title-card-topic">
-        {name}
+        {title}
         <img
           src={iconLink.src}
           alt="icon arrow link"

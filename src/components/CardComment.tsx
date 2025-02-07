@@ -6,10 +6,12 @@ export const CardComment = ({
   comment,
   removeComment,
   currentUser,
+  idTopic
 }: {
   comment: ObjComment;
-  removeComment: (id: number) => void;
+  removeComment: (idComment: number, idTopic: number) => void;
   currentUser: string;
+  idTopic: number;
 }) => {
   const { user, comment: content, date, id } = comment;
 
@@ -24,7 +26,7 @@ export const CardComment = ({
             alt="icon delete"
             width={30}
             height={30}
-            onClick={() => removeComment(id)}
+            onClick={() => removeComment(id, idTopic)}
             className="icon-delete"
           />
         )}
