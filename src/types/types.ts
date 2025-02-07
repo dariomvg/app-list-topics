@@ -25,10 +25,13 @@ export interface UseTopics {
   resetSearch: () => void;
   addNewComment: (comment: string, idTopic: number) => void;
   removeComment: (idComment: number, idTopic: number) => void;
+  loading: boolean; 
+
 }
 
 export interface UseFindTopic {
   currentTopic: ObjTopic;
+  loading: boolean; 
 }
 
 export interface ContextProviderChildren {

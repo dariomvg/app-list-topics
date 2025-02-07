@@ -4,11 +4,11 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import iconSend from "@/assets/icon-send.svg";
 import { useTopics } from "@/hooks/useTopics";
 
-export const CreateComment = ({idTopic}: {idTopic: number}) => {
+export const CreateComment = ({ idTopic }: { idTopic: number }) => {
   const count = 150;
   const [comment, setComment] = useState<string>("");
   const [countCaracters, setCountCaracters] = useState<number>(count);
-  const {addNewComment} = useTopics(); 
+  const { addNewComment } = useTopics();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
@@ -18,7 +18,7 @@ export const CreateComment = ({idTopic}: {idTopic: number}) => {
 
   const submitCreate = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addNewComment(comment, idTopic); 
+    addNewComment(comment, idTopic);
     setComment("");
     setCountCaracters(count);
   };

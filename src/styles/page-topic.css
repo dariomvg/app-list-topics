@@ -43,3 +43,14 @@
     background-color: #fff;
     border-radius: 5px;
 }
+
+.container-loading {
+    width: 60%;
+    margin: auto;  
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding-top: 70px;
+
+}
+

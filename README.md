@@ -1,12 +1,4 @@
-# HACER
-
-> agregar loadings en /topic, /, 
-> CREAR README
-> PRUEBAS, DEPLOY
-
-
-
-
+# create readme
 
 CREATE TABLE list (
     id SERIAL PRIMARY KEY,

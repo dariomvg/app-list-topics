@@ -6,16 +6,23 @@ import { getTopic } from "@/libs/requests";
 
 export const useFindTopic = (title: string): UseFindTopic => {
   const [currentTopic, setCurrentTopic] = useState<ObjTopic>(objTopic);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (title) {
       const getCurrentTopic = async () => {
-        const topic = await getTopic(title);
-        if (topic) setCurrentTopic(topic[0]);
+        try {
+          const topic = await getTopic(title);
+          if (topic) setCurrentTopic(topic[0]);
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
       };
       getCurrentTopic();
     }
   }, [title]);
 
-  return { currentTopic };
+  return { currentTopic, loading };
 };

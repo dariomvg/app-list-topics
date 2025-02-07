@@ -26,6 +26,8 @@ const createDate = () => {
 export const useTopics = (): UseTopics => {
   const [topics, setTopics] = useState<ObjTopic[]>([]);
   const [topic, setTopic] = useState<ObjTopic>(objTopic);
+  const [loading, setLoading] = useState<boolean>(true);
+
   const { username } = useContextUser();
   const router = useRouter();
 
@@ -74,9 +76,15 @@ export const useTopics = (): UseTopics => {
 
   useEffect(() => {
     const getAllTopics = async () => {
-      const allTopics = await getTopics();
-      const topicsOrdered = orderListTopics(allTopics)
-      if (topicsOrdered) setTopics(topicsOrdered);
+      try {
+        const allTopics = await getTopics();
+        const topicsOrdered = orderListTopics(allTopics);
+        if (topicsOrdered) setTopics(topicsOrdered);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     };
     getAllTopics();
   }, []);
@@ -89,5 +97,6 @@ export const useTopics = (): UseTopics => {
     searchTopic,
     topic,
     resetSearch,
+    loading,
   };
 };
